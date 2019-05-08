@@ -1,0 +1,80 @@
+{
+    "name": "vscode-subtitles",
+    "displayName": "Lyrics/Subtitles Support",
+    "description": "VSCode support for subtitles and lyrics",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GalAster/vscode-toml.git"
+    },
+    "engines": {
+        "vscode": "^1.8.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "scripts": {
+        "build": "ts-node extension/extension.ts",
+        "lint": "tslint **/*.ts --fix"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "lrc",
+                "aliases": [
+                    "Lyrics",
+                    "LRC"
+                ],
+                "extensions": [
+                    ".lrc"
+                ],
+                "filenames": [],
+                "mimetypes": [
+                    "text/x-lrc"
+                ],
+                "configuration": "./extension/all.configuration.json"
+            },
+            {
+                "id": "ssa",
+                "aliases": [
+                    "SSA",
+                    "ASS"
+                ],
+                "extensions": [
+                    ".ssa",
+                    ".ass"
+                ],
+                "filenames": [],
+                "mimetypes": [
+                    "text/x-ass"
+                ],
+                "configuration": "./extension/all.configuration.json"
+            },
+            {
+                "id": "srt",
+                "aliases": [
+                    "Subrip",
+                    "SRT"
+                ],
+                "extensions": [
+                    ".srt"
+                ],
+                "filenames": [],
+                "mimetypes": [
+                    "text/x-srt"
+                ],
+                "configuration": "./extension/all.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lrc",
+                "scopeName": "source.lrc",
+                "path": "./extension/lrc.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/node": "^11.13.6"
+    }
+}
