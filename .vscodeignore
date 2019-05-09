@@ -2,3 +2,6 @@ node_modules
 source
 test
 extension/extension.ts
+
+*.vsix
+*.tgz

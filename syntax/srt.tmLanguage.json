@@ -1,0 +1,46 @@
+{
+    "id": "srt",
+    "version": "v0.2.0",
+    "scopeName": "source.subrip",
+    "uuid": "9b00c027-8f13-4f5a-a57e-d90478a1f819",
+    "information_for_contributors": [
+        "aster: galaster@foxmail.com"
+    ],
+    "patterns": [
+        {
+            "name": "variable.other.readwrite.subrip",
+            "match": "^(\\d+)$"
+        },
+        {
+            "match": "^(\\d{2}:\\d{2}:\\d{2},\\d{3}) (-->) (\\d{2}:\\d{2}:\\d{2},\\d{3})$",
+            "captures": {
+                "1": {
+                    "name": "constant.other.time.subrip"
+                },
+                "2": {
+                    "name": "keyword.operator.assignment.subrip"
+                },
+                "3": {
+                    "name": "constant.other.time.subrip"
+                }
+            }
+        },
+        {
+            "begin": "(\\</?)((?i:b|i|u|font)\\b)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.html"
+                },
+                "2": {
+                    "name": "entity.name.tag.inline.any.html"
+                }
+            },
+            "end": "((?: ?/)?\\>)",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.end.html"
+                }
+            }
+        }
+    ]
+}
