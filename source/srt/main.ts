@@ -1,5 +1,5 @@
 const time_line = {
-    match: '^(\\d{2}:\\d{2}:\\d{2},\\d{3}) (-->) (\\d{2}:\\d{2}:\\d{2},\\d{3})$',
+    match: /^(\d{2}:[0-6][0-9]:[0-6][0-9],\d{3}) (-->) (\d{2}:[0-6][0-9]:[0-6][0-9],\d{3})$/.source,
     captures: {
         1: { name: 'constant.other.time.subrip' },
         2: { name: 'keyword.operator.assignment.subrip' },
@@ -8,8 +8,8 @@ const time_line = {
 }
 
 const number_line = {
+    match: /^([1-9][0-9]*)$/.source,
     name: 'variable.other.readwrite.subrip',
-    match: '^(\\d+)$',
 }
 
 const html_tag = {
@@ -24,10 +24,29 @@ const html_tag = {
     },
 }
 
+const html_bold = {
+    match: /(<b>)(.*)(<\/b>)/.source,
+    captures: {
+        1: { name: 'punctuation.definition.tag.begin.html' },
+        2: { name: 'entity.name.tag.inline.any.html' },
+        3: { name: 'punctuation.definition.tag.end.html' },
+    },
+}
 
+const text = {
+    begin: '.+',
+    beginCaptures: {},
+    end: '(\n\r|\n)',
+    endCaptures: {},
+    name: 'string.literal.subrip',
+    patterns: [
+        html_tag,
+        html_bold,
+    ]
+}
 
 export const pattern: any[] = [
     number_line,
     time_line,
-    html_tag,
+    text,
 ]

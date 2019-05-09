@@ -7,9 +7,6 @@ interface tmLang {
     uuid: string
 }
 
-
-
-function including(_: string) { return { include: '#' + _ } }
 function saveSyntax(name: tmLang) {
     writeFileSync(
         `${__dirname}/${name.id}.tmLanguage.json`,
@@ -18,4 +15,3 @@ function saveSyntax(name: tmLang) {
 }
 
 [lrc, srt].map(saveSyntax)
-
