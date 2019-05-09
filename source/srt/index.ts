@@ -4,7 +4,7 @@ export const srt = {
     id: 'srt',
     version: getVersion(),
     scopeName: 'source.subrip',
-    uuid: '9b00c027-8f13-4f5a-a57e-d90478a1f819',
+    uuid: '90101069-65f0-4834-a2fa-faad3b9d14db',
     information_for_contributors: [
         'aster: galaster@foxmail.com',
     ],
