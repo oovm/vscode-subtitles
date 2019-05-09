@@ -2,7 +2,8 @@
     "name": "vscode-subtitles",
     "displayName": "Lyrics/Subtitles Support",
     "description": "VSCode support for subtitles and lyrics",
-    "version": "0.1.0",
+    "version": "0.2.0",
+    "publisher": "aster",
     "repository": {
         "type": "git",
         "url": "https://github.com/GalAster/vscode-toml.git"
@@ -14,15 +15,16 @@
         "Programming Languages"
     ],
     "scripts": {
-        "build": "ts-node extension/extension.ts",
-        "lint": "tslint **/*.ts --fix"
+        "build": "ts-node syntax/extension.ts",
+        "lint": "tslint **/*.ts --fix",
+        "pack": "vsce package"
     },
     "contributes": {
         "languages": [
             {
                 "id": "lrc",
                 "aliases": [
-                    "Lyrics",
+                    "Lyric",
                     "LRC"
                 ],
                 "extensions": [
@@ -32,7 +34,7 @@
                 "mimetypes": [
                     "text/x-lrc"
                 ],
-                "configuration": "./extension/all.configuration.json"
+                "configuration": "./syntax/all.configuration.json"
             },
             {
                 "id": "ssa",
@@ -48,12 +50,12 @@
                 "mimetypes": [
                     "text/x-ass"
                 ],
-                "configuration": "./extension/all.configuration.json"
+                "configuration": "./syntax/all.configuration.json"
             },
             {
                 "id": "srt",
                 "aliases": [
-                    "Subrip",
+                    "SubRip",
                     "SRT"
                 ],
                 "extensions": [
@@ -63,18 +65,28 @@
                 "mimetypes": [
                     "text/x-srt"
                 ],
-                "configuration": "./extension/all.configuration.json"
+                "configuration": "./syntax/all.configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "lrc",
-                "scopeName": "source.lrc",
-                "path": "./extension/lrc.tmLanguage.json"
+                "scopeName": "source.lyric",
+                "path": "./syntax/lrc.tmLanguage.json"
+            },
+            {
+                "language": "srt",
+                "scopeName": "source.subrip",
+                "path": "./syntax/srt.tmLanguage.json"
             }
         ]
     },
     "devDependencies": {
         "@types/node": "^11.13.6"
+    },
+    "__metadata": {
+        "id": "90101069-65f0-4834-a2fa-faad3b9d14d9",
+        "publisherDisplayName": "Aster",
+        "publisherId": "3406b78c-f287-4619-8d82-7c97998693e3"
     }
 }
