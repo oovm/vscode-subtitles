@@ -1,6 +1,6 @@
 {
     "id": "srt",
-    "version": "v0.2.0",
+    "version": "v0.3.0",
     "scopeName": "source.subrip",
     "uuid": "90101069-65f0-4834-a2fa-faad3b9d14db",
     "information_for_contributors": [

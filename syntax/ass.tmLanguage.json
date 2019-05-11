@@ -1,0 +1,104 @@
+{
+    "id": "ass",
+    "version": "v0.3.0",
+    "scopeName": "source.ass",
+    "uuid": "90101069-65f0-4834-a2fa-faad3b9d1400",
+    "information_for_contributors": [
+        "aster: galaster@foxmail.com"
+    ],
+    "patterns": [
+        {
+            "begin": "(^[ \\t]+)?(?=;)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.whitespace.comment.leading.ass"
+                }
+            },
+            "end": "(?!\\G)",
+            "patterns": [
+                {
+                    "begin": ";",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.ass"
+                        }
+                    },
+                    "end": "\\n",
+                    "name": "comment.line.semicolon.ass"
+                }
+            ]
+        },
+        {
+            "begin": "([A-Za-z\\s]*)(:)\\s*",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.tag.ass"
+                },
+                "2": {
+                    "name": "punctuation.definition.keyValue.ass"
+                }
+            },
+            "end": "[^,]*\\n",
+            "patterns": []
+        },
+        {
+            "captures": {
+                "1": {
+                    "name": "keyword.other.definition.ass"
+                },
+                "2": {
+                    "name": "punctuation.separator.key-value.ass"
+                }
+            },
+            "match": "\\b([a-zA-Z0-9_.-]+)\\b\\s*(=)"
+        },
+        {
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.entity.ass"
+                },
+                "3": {
+                    "name": "punctuation.definition.entity.ass"
+                }
+            },
+            "match": "^(\\[)(.*?)(\\])",
+            "name": "entity.name.section.group-title.ass"
+        },
+        {
+            "begin": "'",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.ass"
+                }
+            },
+            "end": "'",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.ass"
+                }
+            },
+            "name": "string.quoted.single.ass",
+            "patterns": [
+                {
+                    "match": "\\\\.",
+                    "name": "constant.character.escape.ass"
+                }
+            ]
+        },
+        {
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.ass"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.ass"
+                }
+            },
+            "name": "string.quoted.double.ass"
+        }
+    ]
+}

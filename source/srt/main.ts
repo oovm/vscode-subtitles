@@ -42,7 +42,7 @@ const text = {
     patterns: [
         html_tag,
         html_bold,
-    ]
+    ],
 }
 
 export const pattern: any[] = [
