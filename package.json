@@ -2,7 +2,7 @@
     "name": "vscode-subtitles",
     "displayName": "Lyrics/Subtitles Support",
     "description": "VSCode support for subtitles and lyrics",
-    "version": "0.2.0",
+    "version": "0.3.1",
     "publisher": "aster",
     "repository": {
         "type": "git",
@@ -37,19 +37,15 @@
                 "configuration": "./syntax/all.configuration.json"
             },
             {
-                "id": "ssa",
+                "id": "ass",
                 "aliases": [
-                    "SSA",
                     "ASS"
                 ],
                 "extensions": [
-                    ".ssa",
                     ".ass"
                 ],
                 "filenames": [],
-                "mimetypes": [
-                    "text/x-ass"
-                ],
+                "mimetypes": [],
                 "configuration": "./syntax/all.configuration.json"
             },
             {
@@ -78,6 +74,11 @@
                 "language": "srt",
                 "scopeName": "source.subrip",
                 "path": "./syntax/srt.tmLanguage.json"
+            },
+            {
+                "language": "ass",
+                "scopeName": "source.ass",
+                "path": "./syntax/ass.tmLanguage.json"
             }
         ]
     },

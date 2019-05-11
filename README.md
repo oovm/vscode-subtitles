@@ -12,9 +12,17 @@ ASS/SSA/SRT/LRC support
 
 
 ## TODO
-- ASS/SSA support
 - LRC Sort
 - SRT Re-number
+- ASS align
 
 ## BUGs
 - SRT HTML does not be identified
+- ASS Dialogue abnormal
+
+## Supports
+
+### ASS Format
+
+![ASS](https://user-images.githubusercontent.com/17541209/57573261-9ad2e500-7457-11e9-9ec2-0aab3d4729cd.png)
+
