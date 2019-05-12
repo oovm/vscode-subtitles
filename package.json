@@ -39,10 +39,12 @@
             {
                 "id": "ass",
                 "aliases": [
+                    "SSA",
                     "ASS"
                 ],
                 "extensions": [
-                    ".ass"
+                    ".ass",
+                    ".ssa"
                 ],
                 "filenames": [],
                 "mimetypes": [],

@@ -1,6 +1,6 @@
 {
     "id": "ass",
-    "version": "v0.3.0",
+    "version": "v0.3.1",
     "scopeName": "source.ass",
     "uuid": "90101069-65f0-4834-a2fa-faad3b9d1400",
     "information_for_contributors": [
@@ -81,8 +81,20 @@
                     "name": "punctuation.separator.ass"
                 },
                 {
-                    "match": "\\b([a-zA-Z]\\w*)",
-                    "name": "storage.type.ass"
+                    "match": "\\b\\d*:[0-5][0-9]:[0-5][0-9]\\.\\d{2}",
+                    "name": "support.function.time.ass"
+                },
+                {
+                    "match": "\\&H[0-9A-F]+",
+                    "name": "support.function.color.ass"
+                },
+                {
+                    "match": "\\b-?\\d+(\\.\\d*)?",
+                    "name": "constant.numeric.ass"
+                },
+                {
+                    "match": "\\b[^,\\r\\n]*",
+                    "name": "string.literal.ass"
                 }
             ]
         },
@@ -99,7 +111,7 @@
             "end": "\\r?\\n",
             "patterns": [
                 {
-                    "match": "(?<!\\w)(\\d*(\\.\\d*)?)(?!\\w)",
+                    "match": "(?<!\\w)(-?\\d+(\\.\\d*)?)(?!\\w)",
                     "name": "constant.numeric.ass"
                 },
                 {
@@ -117,17 +129,8 @@
             ]
         },
         {
-            "captures": {
-                "1": {
-                    "name": "keyword.other.definition.ass"
-                },
-                "2": {
-                    "name": "punctuation.separator.key-value.ass"
-                }
-            },
-            "match": "\\b([a-zA-Z0-9_.-]+)\\b\\s*(=)"
-        },
-        {
+            "name": "entity.name.section.group-title.ass",
+            "match": "^(\\[)(.*?)(\\])",
             "captures": {
                 "1": {
                     "name": "punctuation.definition.entity.ass"
@@ -135,45 +138,15 @@
                 "3": {
                     "name": "punctuation.definition.entity.ass"
                 }
-            },
-            "match": "^(\\[)(.*?)(\\])",
-            "name": "entity.name.section.group-title.ass"
+            }
         },
         {
-            "begin": "'",
-            "beginCaptures": {
-                "0": {
-                    "name": "punctuation.definition.string.begin.ass"
+            "match": "(.*)",
+            "captures": {
+                "1": {
+                    "name": "invalid.illegal.lyric"
                 }
-            },
-            "end": "'",
-            "endCaptures": {
-                "0": {
-                    "name": "punctuation.definition.string.end.ass"
-                }
-            },
-            "name": "string.quoted.single.ass",
-            "patterns": [
-                {
-                    "match": "\\\\.",
-                    "name": "constant.character.escape.ass"
-                }
-            ]
-        },
-        {
-            "begin": "\"",
-            "beginCaptures": {
-                "0": {
-                    "name": "punctuation.definition.string.begin.ass"
-                }
-            },
-            "end": "\"",
-            "endCaptures": {
-                "0": {
-                    "name": "punctuation.definition.string.end.ass"
-                }
-            },
-            "name": "string.quoted.double.ass"
+            }
         }
     ]
 }

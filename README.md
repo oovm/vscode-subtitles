@@ -17,12 +17,16 @@ ASS/SSA/SRT/LRC support
 - ASS align
 
 ## BUGs
-- SRT HTML does not be identified
+- SRT HTML not identified
 - ASS Dialogue abnormal
+- ASS Script not identified
 
 ## Supports
 
-### ASS Format
+### ASS/SSA Format
 
-![ASS](https://user-images.githubusercontent.com/17541209/57573261-9ad2e500-7457-11e9-9ec2-0aab3d4729cd.png)
+![ASS](https://user-images.githubusercontent.com/17541209/57577856-1f068600-74b3-11e9-9dec-d88acafcfe0a.png)
+
+### LRC Format
+![LRC](https://user-images.githubusercontent.com/17541209/57577857-1f9f1c80-74b3-11e9-96e1-68061f7a7420.png)
 

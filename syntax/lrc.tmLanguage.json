@@ -1,6 +1,6 @@
 {
     "id": "lrc",
-    "version": "v0.3.0",
+    "version": "v0.3.1",
     "scopeName": "source.lyric",
     "uuid": "90101069-65f0-4834-a2fa-faad3b9d14da",
     "information_for_contributors": [
@@ -8,7 +8,7 @@
     ],
     "patterns": [
         {
-            "begin": "\\[([0-9][0-9]:[0-6][0-9]\\.[0-9][0-9])\\]",
+            "begin": "\\[([0-5][0-9]:[0-5][0-9]\\.[0-9][0-9])\\]",
             "beginCaptures": {
                 "1": {
                     "name": "constant.other.time.lyric"
