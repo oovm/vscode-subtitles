@@ -1,5 +1,5 @@
 const time_line = {
-    match: /^(\d{2}:[0-6][0-9]:[0-6][0-9],\d{3}) (-->) (\d{2}:[0-6][0-9]:[0-6][0-9],\d{3})$/.source,
+    match: /^(\d{2}:[0-5][0-9]:[0-5][0-9],\d{3}) (-->) (\d{2}:[0-5][0-9]:[0-5][0-9],\d{3})$/.source,
     captures: {
         1: { name: 'constant.other.time.subrip' },
         2: { name: 'keyword.operator.assignment.subrip' },

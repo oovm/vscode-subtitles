@@ -1,5 +1,5 @@
 const digit = {
-    match: /(?<!\w)(\d*(\.\d*)?)(?!\w)/.source,
+    match: /(?<!\w)(-?\d+(\.\d*)?)(?!\w)/.source,
     name: 'constant.numeric.ass',
 }
 
@@ -15,16 +15,18 @@ const illegal = {
     },
 }
 
-const invalid = [
-    {
-        name: 'invalid.illegal.noKey.ass',
-        match: '(\\s*:.*)$',
+const block = {
+    name: 'entity.name.section.group-title.ass',
+    match: '^(\\[)(.*?)(\\])',
+    captures: {
+        1: {
+            name: 'punctuation.definition.entity.ass',
+        },
+        3: {
+            name: 'punctuation.definition.entity.ass',
+        },
     },
-    {
-        name: 'invalid.deprecated.noValue.ass',
-        match: '(\\s*[A-Za-z_\\-][A-Za-z0-9_\\-]*\\s*:)(?:\\s*$)',
-    },
-]
+}
 
 
 const CommonLine = {
@@ -53,7 +55,6 @@ const FormatLine = {
         2: { name: 'punctuation.definition.keyValue.ass' },
     },
     end: /[\r\n]+/.source,
-    //contentName: 'meta.function-call.arguments.python',
     patterns: [
         {
             match: /,/.source,
@@ -61,7 +62,7 @@ const FormatLine = {
         },
         {
             match: /\b([a-zA-Z]\w*)/.source,
-            name: 'storage.type.ass'//'support.function.ass',
+            name: 'storage.type.ass'
         },
     ],
 }
@@ -73,16 +74,27 @@ const StyleLine = {
         2: { name: 'punctuation.definition.keyValue.ass' },
     },
     end: /[\r\n]+/.source,
-    //contentName: 'meta.function-call.arguments.python',
     patterns: [
         {
             match: /,/.source,
             name: 'punctuation.separator.ass',
         },
         {
-            match: /\b([a-zA-Z]\w*)/.source,
-            name: 'storage.type.ass'//'support.function.ass',
+            match: /\b\d*:[0-5][0-9]:[0-5][0-9]\.\d{2}/.source,
+            name: 'support.function.time.ass',
         },
+        {
+            match: /\&H[0-9A-F]+/.source,
+            name: 'support.function.color.ass',
+        },
+        {
+            match: /\b-?\d+(\.\d*)?/.source,
+            name: 'constant.numeric.ass',
+        },
+        {
+            match: /\b[^,\r\n]*/.source,
+            name: 'string.literal.ass',
+        }
     ],
 }
 
@@ -111,63 +123,6 @@ export const pattern: any = [
     FormatLine,
     StyleLine,
     CommonLine,
-    {
-        captures: {
-            1: {
-                name: 'keyword.other.definition.ass',
-            },
-            2: {
-                name: 'punctuation.separator.key-value.ass',
-            },
-        },
-        match: '\\b([a-zA-Z0-9_.-]+)\\b\\s*(=)',
-    },
-    {
-        captures: {
-            1: {
-                name: 'punctuation.definition.entity.ass',
-            },
-            3: {
-                name: 'punctuation.definition.entity.ass',
-            },
-        },
-        match: '^(\\[)(.*?)(\\])',
-        name: 'entity.name.section.group-title.ass',
-    },
-    {
-        begin: "'",
-        beginCaptures: {
-            0: {
-                name: 'punctuation.definition.string.begin.ass',
-            },
-        },
-        end: "'",
-        endCaptures: {
-            0: {
-                name: 'punctuation.definition.string.end.ass',
-            },
-        },
-        name: 'string.quoted.single.ass',
-        patterns: [
-            {
-                match: '\\\\.',
-                name: 'constant.character.escape.ass',
-            },
-        ],
-    },
-    {
-        begin: '"',
-        beginCaptures: {
-            0: {
-                name: 'punctuation.definition.string.begin.ass',
-            },
-        },
-        end: '"',
-        endCaptures: {
-            0: {
-                name: 'punctuation.definition.string.end.ass',
-            },
-        },
-        name: 'string.quoted.double.ass',
-    },
+    block,
+    illegal
 ]
