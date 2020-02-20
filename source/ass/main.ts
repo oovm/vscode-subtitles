@@ -62,7 +62,7 @@ const FormatLine = {
         },
         {
             match: /\b([a-zA-Z]\w*)/.source,
-            name: 'storage.type.ass'
+            name: 'storage.type.ass',
         },
     ],
 }
@@ -94,7 +94,7 @@ const StyleLine = {
         {
             match: /\b[^,\r\n]*/.source,
             name: 'string.literal.ass',
-        }
+        },
     ],
 }
 
@@ -124,5 +124,5 @@ export const pattern: any = [
     StyleLine,
     CommonLine,
     block,
-    illegal
+    illegal,
 ]

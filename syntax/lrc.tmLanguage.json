@@ -1,10 +1,15 @@
 {
     "id": "lrc",
-    "version": "v0.3.1",
+    "version": "v0.3.2",
+    "name": "Lyric",
     "scopeName": "source.lyric",
-    "uuid": "90101069-65f0-4834-a2fa-faad3b9d14da",
+    "fileTypes": [
+        "lrc",
+        "lyric"
+    ],
+    "uuid": "ac7e1470-6d3a-457c-8b5b-bf44f6da3ed2",
     "information_for_contributors": [
-        "aster: galaster@foxmail.com"
+        "aster: 19260817@qq.com"
     ],
     "patterns": [
         {
@@ -34,7 +39,7 @@
                     "name": "punctuation.definition.split.lyric"
                 },
                 "4": {
-                    "name": "meta.object-literal.key.lyric"
+                    "name": "support.type.property-name"
                 },
                 "5": {
                     "name": "punctuation.definition.meta.lyric"

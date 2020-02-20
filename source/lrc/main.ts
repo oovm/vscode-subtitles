@@ -13,10 +13,10 @@ const meta_info = {
     match: /(\[)([a-zA-Z].*)(:)(.*)(\])/.source,
     captures: {
         1: { name: 'punctuation.definition.meta.lyric' },
-        3: { name: 'punctuation.definition.split.lyric' },
-        5: { name: 'punctuation.definition.meta.lyric' },
         2: { name: 'entity.name.function.lyric' },
-        4: { name: 'meta.object-literal.key.lyric' },
+        3: { name: 'punctuation.definition.split.lyric' },
+        4: { name: 'support.type.property-name' },
+        5: { name: 'punctuation.definition.meta.lyric' },
     },
 }
 

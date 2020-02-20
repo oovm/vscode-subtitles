@@ -5,7 +5,7 @@ LRC Syntax
 
 ### Meta Info
 
-```
+```lrc
 [al:本歌所在的唱片集]
 [ar:演出者-歌手]
 [au:歌詞作者-作曲家]

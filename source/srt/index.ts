@@ -3,10 +3,15 @@ import { getVersion } from '../lib'
 export const srt = {
     id: 'srt',
     version: getVersion(),
+    name: 'Subtitle',
     scopeName: 'source.subrip',
-    uuid: '90101069-65f0-4834-a2fa-faad3b9d14db',
+    fileTypes: [
+        'srt',
+        'subrip',
+    ],
+    uuid: '645230de-6f9d-4818-a3de-fefccaa4eaa7',
     information_for_contributors: [
-        'aster: galaster@foxmail.com',
+        'aster: 19260817@qq.com',
     ],
     patterns: pattern,
 }
