@@ -4,7 +4,7 @@ VSCode Support for Subtitles
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg?style=flat-square)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 [![LICENSE](https://img.shields.io/badge/license-MPL%202.0-blue.svg?style=flat-square)](https://github.com/GalAster/vscode-subtitles/blob/master/License.md)
 
-- Github: [https://github.com/Vscode-Subtitles](https://github.com/GalAster/vscode-subtitles)
+- Github: [https://github.com/VSCode-Subtitles](https://github.com/GalAster/vscode-subtitles)
 - VSCode: [https://marketplace.visualstudio.com/VSCode-Subtitles](https://marketplace.visualstudio.com/items?itemName=Aster.vscode-subtitles)
 
 
@@ -17,7 +17,6 @@ ASS/SSA/SRT/LRC support
 - ASS align
 
 ## BUGs
-- SRT HTML not identified
 - ASS Dialogue abnormal
 - ASS Script not identified
 

@@ -1,3 +1,9 @@
+## Version 0.3.3
+
+### Fix
+
+- Fix `LRC`  three-digit millisecond highlight problem
+
 ## Version 0.3.2
 
 ### Fix
