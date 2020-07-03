@@ -23,9 +23,12 @@ ASS/SSA/SRT/LRC support
 ## Supports
 
 ### ASS/SSA Format
-
 ![ASS](https://user-images.githubusercontent.com/17541209/57577856-1f068600-74b3-11e9-9dec-d88acafcfe0a.png)
 
 ### LRC Format
 ![LRC](https://user-images.githubusercontent.com/17541209/57577857-1f9f1c80-74b3-11e9-96e1-68061f7a7420.png)
 
+## Development
+
+- build: yarn build
+- pack: vsce package

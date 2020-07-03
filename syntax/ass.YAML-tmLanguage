@@ -1,0 +1,89 @@
+---
+id: ass
+version: v0.4.0
+name: Aegisub
+scopeName: source.ass
+fileTypes:
+- ass
+- ssa
+uuid: 90101069-65f0-4834-a2fa-faad3b9d1400
+information_for_contributors:
+- 'aster: 19260817@qq.com'
+patterns:
+- begin: "(^[ \\t]+)?(?=;)"
+  beginCaptures:
+    '1':
+      name: punctuation.whitespace.comment.leading.ass
+  end: "(?!\\G)"
+  patterns:
+  - begin: ";"
+    beginCaptures:
+      '0':
+        name: punctuation.definition.comment.ass
+    end: "\\n"
+    name: comment.line.semicolon.ass
+- match: "(Comment)(:)\\s*(.*)\\r?\\n"
+  captures:
+    '1':
+      name: punctuation.definition.comment.ass
+    '2':
+      name: punctuation.definition.keyValue.ass
+    '3':
+      name: comment.line.ass
+- begin: "(Format)(:)"
+  beginCaptures:
+    '1':
+      name: entity.name.tag.ass
+    '2':
+      name: punctuation.definition.keyValue.ass
+  end: "[\\r\\n]+"
+  patterns:
+  - match: ","
+    name: punctuation.separator.ass
+  - match: "\\b([a-zA-Z]\\w*)"
+    name: storage.type.ass
+- begin: "(Style|Dialogue)(:)"
+  beginCaptures:
+    '1':
+      name: entity.name.tag.ass
+    '2':
+      name: punctuation.definition.keyValue.ass
+  end: "[\\r\\n]+"
+  patterns:
+  - match: ","
+    name: punctuation.separator.ass
+  - match: "\\b\\d*:[0-5][0-9]:[0-5][0-9]\\.\\d{2}"
+    name: support.function.time.ass
+  - match: "\\&H[0-9A-F]+"
+    name: support.function.color.ass
+  - match: "\\b-?\\d+(\\.\\d*)?"
+    name: constant.numeric.ass
+  - match: "\\b[^,\\r\\n]*"
+    name: string.literal.ass
+- begin: "([A-Za-z\\s]*)(:)\\s*"
+  beginCaptures:
+    '1':
+      name: entity.name.tag.ass
+    '2':
+      name: punctuation.definition.keyValue.ass
+  end: "\\r?\\n"
+  patterns:
+  - match: "(?<!\\w)(-?\\d+(\\.\\d*)?)(?!\\w)"
+    name: constant.numeric.ass
+  - match: "(?<!\\w)([^,]*)(?!\\w)"
+    name: string.literal.ass
+  - match: "(.*)"
+    captures:
+      '1':
+        name: invalid.illegal.lyric
+- name: entity.name.section.group-title.ass
+  match: "^(\\[)(.*?)(\\])"
+  captures:
+    '1':
+      name: punctuation.definition.entity.ass
+    '3':
+      name: punctuation.definition.entity.ass
+- match: "(.*)"
+  captures:
+    '1':
+      name: invalid.illegal.lyric

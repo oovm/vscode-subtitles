@@ -2,7 +2,7 @@
     "name": "vscode-subtitles",
     "displayName": "Lyrics/Subtitles Support",
     "description": "VSCode support for subtitles and lyrics",
-    "version": "0.3.3",
+    "version": "0.4.0",
     "icon": "icon.png",
     "publisher": "aster",
     "repository": {

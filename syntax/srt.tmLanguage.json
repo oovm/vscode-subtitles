@@ -1,6 +1,6 @@
 {
     "id": "srt",
-    "version": "v0.3.2",
+    "version": "v0.4.0",
     "name": "Subtitle",
     "scopeName": "source.subrip",
     "fileTypes": [

@@ -1,5 +1,5 @@
 const time_line = {
-    begin: /\[([0-5][0-9]:[0-5][0-9]\.[0-9][0-9])\]/.source,
+    begin: /\[([0-5][0-9]:[0-5][0-9]\.[0-9]{1,4})\]/.source,
     beginCaptures: {
         1: { name: 'constant.other.time.lyric' },
     },

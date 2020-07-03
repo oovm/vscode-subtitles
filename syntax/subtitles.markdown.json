@@ -1,0 +1,55 @@
+{
+    "fileTypes": [],
+    "scopeName": "markdown.subtitles.codeblock",
+    "injectionSelector": "L:markup.fenced_code.block.markdown",
+    "patterns": [
+        {
+            "begin": "(?<=[`~])ass(\\s+[^`~]*)?$",
+            "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
+            "patterns": [
+                {
+                    "begin": "(^|\\G)(\\s*)(.*)",
+                    "while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
+                    "contentName": "meta.embedded.block.ass",
+                    "patterns": [
+                        {
+                            "include": "source.ass"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "begin": "(?<=[`~])lrc(\\s+[^`~]*)?$",
+            "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
+            "patterns": [
+                {
+                    "begin": "(^|\\G)(\\s*)(.*)",
+                    "while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
+                    "contentName": "meta.embedded.block.lrc",
+                    "patterns": [
+                        {
+                            "include": "source.lrc"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "begin": "(?<=[`~])srt(\\s+[^`~]*)?$",
+            "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
+            "patterns": [
+                {
+                    "begin": "(^|\\G)(\\s*)(.*)",
+                    "while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
+                    "contentName": "meta.embedded.block.srt",
+                    "patterns": [
+                        {
+                            "include": "source.srt"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
