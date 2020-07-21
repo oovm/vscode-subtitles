@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs'
-import { srt, lrc, ass } from '../source'
+import { srt, lrc } from '../source'
 
 interface tmLang {
     id: string
@@ -14,4 +14,4 @@ function saveSyntax(name: tmLang) {
     )
 }
 
-[lrc, srt, ass].map(saveSyntax)
+[lrc, srt].map(saveSyntax)
