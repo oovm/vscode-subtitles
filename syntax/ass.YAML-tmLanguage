@@ -40,9 +40,9 @@ repository:
           '2': {name: punctuation.definition.keyValue.ass}
         end: "[\r\n]"
         patterns:
-          - match: ","
+          - match: \,
             name: punctuation.separator.ass
-          - match: "\b([a-zA-Z]\w*)"
+          - match: ([a-zA-Z])
             name: storage.type.ass
       - begin: (?:^[ \t]+)?(Style|Dialogue)(:)
         beginCaptures:
@@ -58,10 +58,7 @@ repository:
           '2': {name: punctuation.definition.keyValue.ass}
         end: "[\r\n]"
         patterns:
-          - match: (?<!\w)(-?\d+(\.\d*)?)(?!\w)
-            name: constant.numeric.ass
-          - match: (?<!\w)([^,]*)(?!\w)
-            name: string.literal.ass
+          - include: '#literal'
           - include: '#invalid'
   block:
     patterns:
@@ -72,29 +69,46 @@ repository:
           '3': {name: punctuation.definition.entity.ass}
   literal:
     patterns:
-      - match: ,
+      - match: \,
         name: punctuation.separator.ass
+      - match: (\\)(n|N|h)
+        name: support.type.primitive.ass
       - match: \d*:[0-5][0-9]:[0-5][0-9]\.\d{2}
-        name: support.type.time.ass
+        name: support.function.time.ass
       - match: \&H[0-9A-F]+
-        name: support.type.color.ass
+        name: support.function.color.ass
       - match: -?\d+(\.\d*)?
         name: constant.numeric.ass
       - match: "[^,\r\n]*"
         name: string.literal.ass
   function:
     patterns:
-      - begin: "\{"
+      - name: support.type.primitive.ass
+        begin: "\{"
         end: "\}"
         patterns:
           - include: '#functions'
   functions:
     patterns:
-      - match: (\\)(an|)([0-9]+)
+      - match: (\\)(s|u|i|b|k|K|an|be|bord|blur|fs|fsp|fscx|fscy|frx|fry|frz|shad|xbord|ybord)([0-9+-\.]+)
         captures:
-          '1': {name: support.function.call.ass}
-          '2': {name: support.function.with-number.ass}
           '3': {name: constant.numeric.ass}
+      - match: (\\)(1a|2a|3a|4a|1c|2c|3c|4c)(\&.*\&)
+        captures:
+          '3': {name: support.function.color.ass}
+      - match: (\\)(fn|r)([^{}]+)
+        captures:
+          '3': {name: string.literal.ass}
+      - begin: (\\)(t|clip|iclip|fad|fade)(\()
+        end: (\))
+        patterns:
+          - match: \,
+            name: punctuation.separator.ass
+          - match: ([0-9]+)
+            name: constant.numeric.ass
+          - match: ([a-zA-Z]+)
+            name: support.type.primitive.ass
+          - include: '#functions'
   invalid:
     patterns:
       - match: (.*)
