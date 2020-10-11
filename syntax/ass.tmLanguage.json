@@ -191,7 +191,7 @@
         "functions": {
             "patterns": [
                 {
-                    "match": "(\\\\)(s|u|i|b|k|K|an|be|bord|blur|fs|fsp|fscx|fscy|frx|fry|frz|shad|xbord|ybord)([0-9+-\\.]+)",
+                    "match": "(\\\\)(s|u|i|b|k|K|an|be|bord|blur|fs|fsp|fscx|fscy|frx|fry|frz|fe|shad|ko|kf|xbord|ybord|xshad|yshad)([0-9+-\\.]+)",
                     "captures": {
                         "3": {
                             "name": "constant.numeric.ass"
@@ -215,7 +215,7 @@
                     }
                 },
                 {
-                    "begin": "(\\\\)(t|clip|iclip|fad|fade)(\\()",
+                    "begin": "(\\\\)(t|clip|iclip|fad|fade|move|org|pos)(\\()",
                     "end": "(\\))",
                     "patterns": [
                         {
@@ -228,7 +228,7 @@
                         },
                         {
                             "match": "([a-zA-Z]+)",
-                            "name": "string.literal.ass"
+                            "name": "support.type.primitive.ass"
                         },
                         {
                             "include": "#functions"
