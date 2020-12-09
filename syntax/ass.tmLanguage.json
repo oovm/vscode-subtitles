@@ -188,7 +188,7 @@
         "functions": {
             "patterns": [
                 {
-                    "match": "(\\\\)(s|u|i|b|k|K|an|be|bord|blur|fax|fay|fs|fsp|fscx|fscy|frx|fry|frz|fe|shad|ko|kf|xbord|ybord|xshad|yshad)([0-9+\\-.]+)",
+                    "match": "(\\\\)(s|u|i|b|k|K|an|be|bord|blur|fa[xyz]|fs|fsc|fsp|fsv|fscx|fscy|fr[xyz]|fe|shad|ko|kf|[xy]bord|[xy]shad|rnd|rnd[xyz])([0-9+\\-.]+)",
                     "captures": {
                         "3": {
                             "name": "constant.numeric.ass"
@@ -212,7 +212,7 @@
                     }
                 },
                 {
-                    "begin": "(\\\\)(t|clip|iclip|fad|fade|move|org|pos)(\\()",
+                    "begin": "(\\\\)(t|clip|iclip|fad|fade|move|org|pos|distort|jitter)(\\()",
                     "end": "(\\))",
                     "patterns": [
                         {
